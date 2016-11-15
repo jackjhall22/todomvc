@@ -30,6 +30,7 @@ var todoList = {
   toggleCompleted: function(position) {
     var todo = this.todos[position];
     todo.completed = !todo.completed;
+    this.displayTodos();
   },
   toggleAll: function() {
     var totalTodos = this.todos.length;
@@ -79,6 +80,11 @@ var handlers = {
     var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     deleteTodoPositionInput.value = '';
+  },
+  toggleCompleted: function() {
+    var toggleCompletedPositionInput = document.getElementById('toggleCompletedPositionInput');
+    todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+    toggleCompletedPositionInput.value = '';
   }
 };
 
